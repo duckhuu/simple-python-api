@@ -6,5 +6,5 @@ ADD app.py .
 CMD ["python", "-m", "venv", ".venv"]
 CMD ["source", ".venv/bin/activate"]
 CMD ["pip", "install", "-r", "requirements.txt"]
-CMD ["pip", "install", "flask"]
+CMD ["python", "-m", "pip", "install", "flask"]
 CMD ["python", "app.py"]
