@@ -4,7 +4,7 @@ RUN  cd  WORK_REPO
 WORKDIR  /WORK_REPO
 RUN  python -m venv .venv
 #RUN  source .venv/bin/activate
-RUN  pip install -r requirements.txt
+#RUN  pip install -r requirements.txt
 RUN  python -m pip install flask
 #WORKDIR  /WORK_REPO
 ADD app.py .
