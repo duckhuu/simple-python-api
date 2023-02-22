@@ -9,7 +9,7 @@ RUN  pip install -r requirements.txt
 RUN  python -m pip install flask
 #WORKDIR  /WORK_REPO
 ADD app.py .
-ADD * . 
+COPY . / 
 
 #CMD ["python", "-m", "venv", ".venv"]
 #CMD ["source", ".venv/bin/activate"]
