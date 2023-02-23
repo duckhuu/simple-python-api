@@ -25,5 +25,4 @@ RUN  python -m pip install flask
 #CMD ["source", ".venv/bin/activate"]
 #CMD ["pip", "install", "-r", "requirements.txt"]
 #CMD ["python", "-m", "pip", "install", "Flask"]
-CMD ["python", "-u", "app.py"]
-CMD ["--host=0.0.0.0", "--port=5000"]
+CMD ["python", "-u", "app.py", "--host=0.0.0.0", "--port=5000"]
