@@ -12,9 +12,10 @@ ADD app.py .
 COPY . /WORK_REPO
 RUN  cd  WORK_REPO
 RUN  python -m venv .venv
-RUN  source .venv/bin/activate
+RUN  source /WORK_REPO/.venv/bin/activate
 RUN  pip install -r requirements.txt
 RUN  python -m pip install flask
+RUN python app.py
 
 #CMD ["python", "-m", "venv", ".venv"]
 #CMD ["source", ".venv/bin/activate"]
