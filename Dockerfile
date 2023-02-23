@@ -11,6 +11,7 @@ RUN  python -m pip install flask
 ADD app.py .
 COPY . /WORK_REPO
 RUN  python -m venv .venv
+RUN  source .venv/bin/activate
 RUN  pip install -r requirements.txt
 RUN  python -m pip install flask
 
