@@ -23,4 +23,4 @@ RUN  python -m pip install flask
 #CMD ["source", ".venv/bin/activate"]
 #CMD ["pip", "install", "-r", "requirements.txt"]
 #CMD ["python", "-m", "pip", "install", "Flask"]
-CMD ["python", "app.py"]
+#CMD ["python", "app.py"]
