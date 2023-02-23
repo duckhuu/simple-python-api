@@ -10,6 +10,7 @@ RUN  python -m pip install flask
 #WORKDIR  /WORK_REPO
 ADD app.py .
 COPY . /WORK_REPO
+EXPOSE 5000
 #RUN  cd  WORK_REPO
 RUN  python -m venv .venv
 RUN  chmod 777 env.sh
@@ -25,3 +26,4 @@ RUN  python -m pip install flask
 #CMD ["pip", "install", "-r", "requirements.txt"]
 #CMD ["python", "-m", "pip", "install", "Flask"]
 CMD ["python", "-u", "app.py"]
+CMD ["--host=0.0.0.0", "--port=80"]
