@@ -17,6 +17,7 @@ RUN  chmod 777 env.sh
 RUN  . .venv/bin/activate
 RUN  pip install -r requirements.txt
 RUN  python -m pip install flask
+RUN  python app.py
 
 
 #CMD ["python", "-m", "venv", ".venv"]
