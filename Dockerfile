@@ -13,7 +13,7 @@ COPY . /WORK_REPO
 #RUN  cd  WORK_REPO
 RUN  python -m venv .venv
 RUN  chmod 777 env.sh
-RUN  sh env.sh
+RUN  ./env.sh
 #RUN  source activate
 RUN  pip install -r requirements.txt
 RUN  python -m pip install flask
