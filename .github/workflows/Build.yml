@@ -42,11 +42,11 @@ jobs:
        run: |
          echo "$DEPLOY_KEY" > private_key && chmod 400 private_key
          cat private_key
-         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
-         sudo su - 
-         docker login
-         docker pull tuhao910/python:app
-         docker run tuhao910/python:app
+  #       ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
+  #       sudo su - 
+  #       docker login
+  #       docker pull tuhao910/python:app
+  #       docker run tuhao910/python:app
  #    - name: login to Azure 
  #      uses: azure/login@v1
  #      with:
