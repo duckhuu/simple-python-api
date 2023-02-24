@@ -40,7 +40,7 @@ jobs:
            HOSTNAME: ${{ secrets.HOSTNAME }}
            USER_NAME: ${{ secrets.USER_NAME }}
        run: |
-         echo "$DEPLOY_KEY" > private_key && chmod 600 private_key
+         echo "$DEPLOY_KEY" > private_key && chmod 400 private_key
          cat private_key
          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
          sudo su - 
