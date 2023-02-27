@@ -1,0 +1,22 @@
+name: Docker test
+
+on:
+  workflow_dispatch 
+# you can trigger on anything you want
+
+jobs:
+  build:
+   runs-on: self-hosted
+    steps:
+     - uses: actions/checkout@v2
+     - name: deploy to ec2
+       env:
+           PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY }}
+           HOSTNAME: ${{ secrets.HOSTNAME }}
+           USER_NAME: ${{ secrets.USER_NAME }}
+           PASSWORD: ${{ secrets.PASSWORD }}
+       run: |
+         sudo su - 
+         docker login
+         docker pull tuhao910/python:app
+         docker run tuhao910/python:app
