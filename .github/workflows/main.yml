@@ -1,4 +1,4 @@
-name: Docker test
+name: Docker build and test
 
 on:
   workflow_dispatch 
@@ -7,8 +7,9 @@ on:
 jobs:
   build:
    runs-on: self-hosted
-   
-    steps:
+  
+   steps:
+     - uses: actions/checkout@v2
      - name: deploy to ec2
        env:
          PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY }}
