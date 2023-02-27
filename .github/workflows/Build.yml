@@ -43,9 +43,8 @@ jobs:
            USER_NAME: ${{ secrets.USER_NAME }}
            PASSWORD: ${{ secrets.PASSWORD
        run: |
-#         echo ${PRIVATE_KEY} > private_key && chmod 600 private_key
-#         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
-          ssh ${USER_NAME}@${HOSTNAME} -p ${PASSWORD}
+         echo ${PRIVATE_KEY} > private_key && chmod 444 private_key
+         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
          sudo su - 
          docker login
          docker pull tuhao910/python:app
@@ -74,10 +73,10 @@ jobs:
          kubectl rollout status deployment/$DEPLOYMENT_NAME
          kubectl get services -o wide
 
-     - name: terraform 
-       run: terraform init
-     - name: terraform plan 
-       run: terraform plan 
-     - name: terrafarom apply
-       run: terraform apply -auto-approve
+#     - name: terraform 
+#       run: terraform init
+#     - name: terraform plan 
+#       run: terraform plan 
+#     - name: terrafarom apply
+#       run: terraform apply -auto-approve
 
