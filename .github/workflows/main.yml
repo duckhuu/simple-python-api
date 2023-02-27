@@ -17,7 +17,6 @@ jobs:
          USER_NAME: ${{ secrets.USER_NAME }}
          PASSWORD: ${{ secrets.PASSWORD }}
        run: |
-         sudo su - 
-         docker login
-         docker pull tuhao910/python:app
-         docker run tuhao910/python:app
+         sudo docker login
+         sudo docker pull tuhao910/python:app
+         sudo docker run tuhao910/python:app
